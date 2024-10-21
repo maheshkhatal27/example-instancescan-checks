@@ -17,6 +17,10 @@ Use Logging Levels: Instead of gs.log(), consider using more appropriate logging
 gs.info() for informative messages.
 gs.warn() for warnings that don’t break functionality but may need attention.
 gs.error() for logging errors that require investigation.
+The Fix script "Scan for log statements" helps find the log statements used any script be it's Business rule,Fix Script,
+UI Action,Script Action etc. The script detects various log statements that should not be used in a production environment, such as gs.log, gs.debug, and others. It returns the line numbers where such statements are found. This allows you to scan scripts in any table, whether it’s in a background script, script include, or other areas. The script is robust and scalable, enabling you to scan any table by simply providing the table name and sys_id. Ensure that the correct backend field name for the script (e.g., script field) is specified. The array of log statements can be easily customized to include or exclude specific log types. The result is an array of line numbers where the specified log statements are used.
+
+
 
 ### Create ATFs in sub production instance
 Highly recommended practice to use ATFs for regression testing on instance upgrade and releases.
